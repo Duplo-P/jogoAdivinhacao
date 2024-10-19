@@ -94,9 +94,7 @@ def menu():
 print("\n           BEM - VINDO AO JOGO DE ADIVINHAÇÃO")  
 numero_secreto = randint(1,10)
 vida = 0
-if os.path.isfile('pontos.json'):
-    menu()
-else:
+if not os.path.isfile('pontos.json'):
     # escrevendo o objeto em um arquivo JSON
     escreverArquivo(pfacil = 0,pmedio = 0,pdificil = 0)
-    menu()
+menu()
